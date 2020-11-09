@@ -6,6 +6,8 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
+# precompile 을 위해
+require "capistrano/webpacker/precompile"
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -29,8 +31,7 @@ require "capistrano/bundler"
 
 ## Capistrano ↔ assets
 ## *rails/assets require가 없으면 배포 후 자동으로 assets precompile이 안된다.
-# ## 지금은 VIEW 가 없어서 주석처리
-# require "capistrano/rails/assets"
+require "capistrano/rails/assets"
 
 ## Capistrano ↔ migrations
 ## * rails/migrations require가 없으면 배포 후 자동으로 DB Migrate가 안된다.
