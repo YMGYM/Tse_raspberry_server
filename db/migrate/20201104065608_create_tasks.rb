@@ -3,6 +3,8 @@ class CreateTasks < ActiveRecord::Migration[6.0]
     create_table :tasks do |t|
       t.string :title
       t.datetime :duedate
+      t.references :user
+      t.boolean :finished
       t.timestamps
     end
   end
