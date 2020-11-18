@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2020_11_17_125456) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.datetime "duedate"
+    t.datetime "dueDate"
     t.integer "user_id"
-    t.boolean "finished"
+    t.boolean "finish"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_125456) do
   create_table "works", force: :cascade do |t|
     t.string "title"
     t.datetime "dueDate"
-    t.boolean "finished"
+    t.boolean "finish"
     t.integer "task_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

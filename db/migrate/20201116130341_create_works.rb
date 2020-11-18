@@ -2,8 +2,8 @@ class CreateWorks < ActiveRecord::Migration[6.0]
   def change
     create_table :works do |t|
       t.string :title
-      t.datetime :dueDate,
-      t.boolean :finished
+      t.datetime :dueDate
+      t.boolean :finish
       t.references :task
       t.timestamps
     end
