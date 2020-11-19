@@ -10,7 +10,6 @@ class TasksController < ApplicationController
     task = Task.create(tasks_params)
 
     redirect_to task
-    return
   end
 
   def show
@@ -25,7 +24,6 @@ class TasksController < ApplicationController
     task.save
 
     redirect_to task
-    return
   end
 
   def destroy
