@@ -8,7 +8,8 @@ class TasksController < ApplicationController
 
   def create
     task = Task.create(tasks_params)
-
+    task.save
+    puts Task.all
     redirect_to task
   end
 
