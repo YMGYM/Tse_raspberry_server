@@ -70,3 +70,4 @@ gem 'capistrano-figaro-yml'
 gem 'capistrano-database-yml'
 
 gem 'devise'
+gem 'rails_admin'
