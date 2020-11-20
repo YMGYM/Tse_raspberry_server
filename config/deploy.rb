@@ -76,3 +76,13 @@ namespace :deploy do
     end
   end
 end
+
+namespace :db do
+  task :drop do
+    run "cd #{current_path} && bundle exec rake db:reset"
+  end
+
+  task :migrate do
+    run "cd #{current_path} && bundle exec rake db:migrate"
+  end
+end
