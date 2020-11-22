@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     task = Task.create(tasks_params)
     task.save
     puts Task.all
-    redirect_to task
+    redirect_to task, method: :get
   end
 
   def show

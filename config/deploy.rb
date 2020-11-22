@@ -79,10 +79,17 @@ end
 
 namespace :db do
   task :drop do
-    run "cd #{current_path} && bundle exec rake db:reset"
+    on roles(:all) do |host|
+      execute :rails, "db:drop"
+      info "Dropping"
+    end
   end
 
   task :migrate do
-    run "cd #{current_path} && bundle exec rake db:migrate"
+    on roles(:all) do |host|
+      execute "cd #{current_path} && bundle exec rake db:migrate"
+      info "Migrating"
+    end
   end
 end
+

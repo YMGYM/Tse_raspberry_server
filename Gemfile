@@ -71,3 +71,5 @@ gem 'capistrano-database-yml'
 
 gem 'devise'
 gem 'rails_admin'
+
+gem 'capistrano-rails-collection'
