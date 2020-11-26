@@ -9,7 +9,8 @@ class WorksController < ApplicationController
 
   def create
     work = @task.works.create(works_params)
-    redirect_to @task, method: :get
+
+    render json: work
   end
 
   def show
@@ -21,9 +22,8 @@ class WorksController < ApplicationController
   def update
     work = @task.works.find(params[:id])
     work.update(works_params)
-    work.save
 
-    redirect_to @task, method: :get
+    render json: work.to_json
   end
 
   def destroy
@@ -31,7 +31,7 @@ class WorksController < ApplicationController
 
     work.destroy
 
-    redirect_to '/tasks', method: :get
+    render json: @task.works
   end
 
   private

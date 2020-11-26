@@ -7,10 +7,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.create(tasks_params)
+    task = Task.new(tasks_params)
     task.save
-    puts Task.all
-    redirect_to task, method: :get
+    render json: task
+
   end
 
   def show
@@ -23,8 +23,7 @@ class TasksController < ApplicationController
     task = Task.find(params[:id])
     task.update(tasks_params)
     task.save
-
-    redirect_to task
+    render json: task
   end
 
   def destroy
@@ -32,7 +31,7 @@ class TasksController < ApplicationController
 
     task.destroy
 
-    redirect_to '/tasks'
+    render json: Task.all
   end
 
   private
