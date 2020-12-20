@@ -3,7 +3,7 @@ class CreateWorks < ActiveRecord::Migration[6.0]
     create_table :works do |t|
       t.string :title
       t.datetime :dueDate
-      t.boolean :finish
+      t.boolean :finish, default: false
       t.references :task
       t.timestamps
     end
