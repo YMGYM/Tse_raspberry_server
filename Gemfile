@@ -72,6 +72,7 @@ gem 'capistrano-figaro-yml'
 gem 'capistrano-database-yml'
 
 gem 'devise'
+gem 'devise_token_auth'
 gem 'rails_admin'
 
 gem 'capistrano-rails-collection'
