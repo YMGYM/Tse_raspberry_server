@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :set_task
-  protect_from_forgery unless: -> { request.format.json? }
+
   def index
     works = @task.works
 

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+
   def index
     tasks = Task.all
 
